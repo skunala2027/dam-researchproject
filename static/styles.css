@@ -1,0 +1,119 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+.textLarge {
+    font-size: large;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.textLargeLeft {
+    font-size: large;
+    color: red;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.textLargeLeftPurple {
+    font-size: large;
+    color: #000080;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.textLargeRight {
+    font-size: large;
+    color: red;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.textMediumLeft {
+    font-size: medium;
+    color: black;
+    padding-left: 10px;
+}
+
+.textLargeList {
+    font-size: large;
+    color: black;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 60px;
+}
+
+.textLargeListRed th {
+    font-size: large;
+    color: red;
+    text-align: left;
+    padding-left: 200px;
+}
+
+.textLargeListGreen th {
+    font-size: large;
+    color: green;
+    text-align: left;
+    padding-left: 200px;
+}
+
+.movingLeft th {
+    padding-left: 30px;
+}
+
+.moveLeft {
+    margin-left: 30px;
+}
+
+.moveLeftComments {
+    margin-left: 20px;
+    font-size: large;
+    padding-top: 20px;
+}
+
+.moveDown {
+    margin-top: 450px;
+    margin-left: 30px;
+    color: blue;
+}
+
+.textSmallCenter {
+    font-size: small;
+    color: red;
+    padding-top: 10px;
+    text-align: center
+}
+
+.textLargeComments {
+    font-size: large;
+    color: black;
+    padding-top: 10px;
+    text-align: center
+}
+
+.alignCenter {
+    text-align: center
+}

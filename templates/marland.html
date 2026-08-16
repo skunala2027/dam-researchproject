@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Marland Place
+{% endblock %}
+
+{% block main %}
+    <!--Used m-0, mb-0, and p-4 in my code to allow the pictures to not stick to the background. Gemini taught me this because it formats the page and makes it look cleaner-->
+    <div class = "row align-items-start m-0 p-4" style = "background-color: lightyellow">
+        <div class = "col-md-6 text-start">
+            <p class = "textLargeLeftPurple">Reasons why the Marland Place dam was taken down: </p>
+            <ol class = "mb-0">
+                <li>
+                    Costly to maintain
+                </li>
+                <li>
+                    Had no purpose for the Town of Andover; stopped providing electricity to the local mills
+                </li>
+                <li>
+                    Negatively impacted the local ecosystem in the Shawsheen River, especially blocking the fish from their migratory routes
+                </li>
+                <li>
+                    Posed a high risk of floods to the nearby buildings and shops
+                </li>
+            </ol>
+        </div>
+        <div class="col-md-6">
+            <figure class = "m-0">
+                <!--Used the documentation to figure out how to make images. Also used Gemini to figure out how to paste a image that is in a exisiting file. I also used Gemini to help my picture to fit onto the website. To ensure that I am doing the styling correctly, I read and confirmed with the documentation to ensure that Gemini was doing it right.-->
+                <img src="{{url_for('static', filename='marlandPlace.jpg')}}" alt = "Picture of Marland Place Dam" style = "width: 100%; height: 450px; object-fit: cover;">
+                <!--Used Gemini to learn how to add a caption onto a picture-->
+                <figcaption>A picture of the removal of the Marland Place dam. Taken by the
+                    <a href = "https://andoverma.gov/655/Shawsheen-River-Dam-Removals">Town of Andover</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+{% endblock %}

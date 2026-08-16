@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Balmoral
+{% endblock %}
+
+{% block main %}
+    <!--Used m-0, mb-0, and p-4 in my code to allow the pictures to not stick to the background. Gemini taught me this because it formats the page and makes it look cleaner-->
+    <div class = "row align-items-start m-0 p-4" style = "background-color: #E3F2FD">
+        <div class = "col-md-6 text-start">
+            <p class = "textLargeLeftPurple">Results of the Balmoral Dam being removed: </p>
+            <ol class = "mb-0">
+                <li>
+                    Restored miles upon miles of natural habitat for fish!
+                    <ul>
+                        <li>
+                            Over 4.1 miles of the Shawsheen River for recreational purposes and 16 acres of habitat for fish were opened.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Water is now regularly flowing without any disruptions, thus resulting in lowered flood risks.
+                </li>
+                <li>
+                    Many fish species like the River Herring have returned to the Shawsheen River and are prospering greatly.
+                </li>
+                <li>
+                    More opportunities for outdoor recreational activities like sightseeing, swimming, and more!
+                </li>
+                <li>
+                    The Town of Andover and local property owners in Andover don't have to spend any extra money to maintain the obsolete dam structures.
+                </li>
+            </ol>
+            <form action = "https://www.andovertownsman.com/news/shawsheen-river-dam-removal-underway/article_f8d59ea4-c902-5b0a-9889-c88a3da63a24.html" method = "get" id = "paddingOutside">
+            <button type = "submit" class = "moveLeft">Source</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <figure class = "m-0">
+                <!--Used the documentation to figure out how to make images. Also used Gemini to figure out how to paste a image that is in a exisiting file. I also used Gemini to help my picture to fit onto the website. To ensure that I am doing the styling correctly, I read and confirmed with the documentation to ensure that Gemini was doing it right.-->
+                <img src="{{url_for('static', filename='balmoral.jpg')}}" alt = "Picture of Balmoral Dam" style = "width: 100%; height: 450px; object-fit: cover;">
+                <!--Used Gemini to learn how to add a caption onto a picture-->
+                <figcaption>A picture of the removal of the Balmoral dam. Taken by the
+                    <a href = "https://www.andovertownsman.com/news/local_news/balmoral-dam-counting-down-its-last-days/article_ee71041b-440a-5e1c-8a85-c6d8eb9a2c2b.html">Andover Townsman</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+{% endblock %}
