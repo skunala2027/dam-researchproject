@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview Of Dams
+{% endblock %}
+
+{% block main %}
+    <!--Used Gemini to find how to structure the right side and left side (wanted the left side to be at the top -> it was previosuly set to the center due to the right side being bigger than the left side)-->
+    <div class = "row align-items-start m-0 p-4" style = "background-color: lightgreen">
+        <div class = "col-md-6 text-start">
+            <!--Used Gemini to help me create a bulleted list. I didn't know how to create the actual bullet points, so Gemini helped clarify that (use the key word strong)-->
+            <p class = "textLargeLeft">What is a Dam?</p>
+            <ul>
+                <li>
+                    <strong class = "textMediumLeft">A dam is a man-made structure built across a river or stream that creates an artificial lake (reservoir) behind the structure.</strong>
+                </li>
+                <li>
+                    <strong class = "textMediumLeft">Artificial lakes may benefit the human societies, but they also have severe consequences. For example, these dams disrupt the habitats and lives of animals. As a result, many environmental organizations strive to remove these man-made dams in order to benefit the animal population.</strong>
+                </li>
+            </ul>
+            <form action = "https://education.nationalgeographic.org/resource/dams/" method = "get" id = "paddingOutside">
+            <button type = "submit" class = "moveLeft">Source</button>
+            </form>
+
+            <p class = "moveDown">Interested in learning more about Dams? Read my paper to learn more!</p>
+        </div>
+        <div class="col-md-6">
+            <!--Benefits are stored here:-->
+            <strong class = "textLargeRight">Benefits</strong>
+            <ul>
+                <li>
+                    <p>Hydropower Generation</p>
+                    <ul>
+                        <li>
+                            <p>Creates electricity for residents through the flow of moving water which spins a turbine which generates electricity</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Agricultural Irrigation</p>
+                    <ul>
+                        <li>
+                            <p>Provides a suitable and reliable source of water for farmers that need to irrigate their crops.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Recreation</p>
+                    <ul>
+                        <li>
+                            <p>Provides a large artificial lake that can be used for boating, fishing, swimming, and more.</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--Negative are stored here: -->
+            <strong class = "textLargeRight">Negatives</strong>
+            <ul>
+                <li>
+                    <p>Floods</p>
+                    <ul>
+                        <li>
+                            <p>Even though these dams can prevent water runoff from flooding local communities that live in mountainous or other high elevation areas around it, eventually, these dams will start to fill up thus causing major floods. This could cause massive destruction to the towns that live next to the dams as the water could corrode the materials of the buildings and even cause buildings to collapse.</p>
+                        </li>
+                        <li>
+                            <p>These floods can also affect wildlife as the wildlife can be forced to leave their habitats due to the rising water or even could be swept away by floodwater.</p>
+                        </li>
+                        <li>
+                            <p>Finally, plants can be affected by these floods as they can die due to oversaturation. On top of that, these floods can cause soil erosion, causing these plants to lose nutrients that are necessary for them to live.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Fish Migration</p>
+                    <ul>
+                        <li>
+                            <p>These dams can block the routes of migrating fish. This is a major issue for fish as they might need to travel to another water source with different salinity and temperature in order to spawn or adapt.</p>
+                        </li>
+                        <li>
+                            <strong class = "textLargeRight">Critical issue that Andover aimed to fix through the destruction of the dams</strong>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Trapped Sediment</p>
+                        <ul>
+                            <li>
+                                <p>The dam keeps free-flowing sand and nutrients from flowing downstream, thus eroding coastal areas and affecting river deltas. </p>
+                            </li>
+                            <li>
+                                <strong class = "textLargeRight">Results in the collapse and loss of beaches</strong>
+                            </li>
+                        </ul>
+                </li>
+            </ul>
+            <form action = "https://www.americanrivers.org/threats-solutions/restoring-damaged-rivers/how-dams-damage-rivers/" method = "get" id = "paddingOutside">
+            <button type = "submit" class = "moveLeft">Source</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

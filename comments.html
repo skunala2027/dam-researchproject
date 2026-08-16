@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Comments
+{% endblock %}
+
+{% block main %}
+<p class = "textLargeComments">Have any comments to add? Say them here: </p>
+<form action="/comments" method="post" class = "alignCenter">
+<input type = "text" autofocus autocomplete = "off" name = "Name" placeHolder = "Put your name here">
+<input type = "text" autocomplete = "off" name = "Comment" placeHolder = "Share your thoughts here">
+<button>Submit</button>
+</form>
+<p class = "textSmallCenter">If you don't want to share your name, keep the box empty!</p>
+
+<p class = "moveLeftComments">Comments: </p>
+<table>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+                {%for items in statementsFromUser%}
+                <tbody>
+                    <tr class = "movingLeft">
+                        <th>{{items.name}} : &nbsp;</th>
+                        <td>{{items.statement}}</td>
+                    </tr>
+                {%endfor%}
+        </tbody>
+    </table>
+
+{% endblock %}

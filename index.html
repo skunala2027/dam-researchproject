@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <!--Used Gemini to read the documentation and help me figure out how to add the text to the left and the picture to the right.-->
+    <div class = "row align-items-center m-0 p-4" style = "background-color: #FDFBF7">
+        <div class = "col-md-6 text-start">
+            <p class = "textLarge">Welcome to my Project! My name is Saketh Kunala, a student from Andover passionate about applying my Computer Science knowledge to solve and analyze real-world environmental issues. As an APES student, I dedicated my summer to pursue a project to analyze the restoration efforts along the local Shawsheen River in Andover using the data-driven tools of SQL, Artificial Intelligence, and more. Our dataset was collected by dedicated volunteers at the Balmoral and Marland Place dams, where they hand-counted the number of fish present throughout the riverway. However, considering that there could be human error, it's important to acknowledge that these results won't be 100% accurate.</p>
+            <p class = "textLarge">Prior to 2017, these dams were blocking migratory pathways for local fish, most notably the River Herring. These human-made dams that hold large quantities of water also pose problems to infrastructure as they are prone to frequent flooding.</p>
+            <p class = "textLarge">I hope that my project inspires and informs others interested in environmental conservation. If you have any questions about my methodology or are interested in learning more, please don't hesitate to reach out!</p>
+            <p class = "textLargeList">Look through our website! Have you checked out these pages:</p>
+            <table>
+                <tbody>
+                    {%if areas[0]%}
+                    <tr class = "textLargeListGreen">
+                        <th>Page 0 : &nbsp;</th>
+                        <td>{{areas[0]}}</td>
+                    </tr>
+                    {%else%}
+                    <tr class = "textLargeListRed">
+                        <th>Page 0 : &nbsp;</th>
+                        <td>{{areas[0]}}</td>
+                    </tr>
+                    {%endif%}
+                    {%if areas[1]%}
+                    <tr class = "textLargeListGreen">
+                        <th>Page 1 : &nbsp;</th>
+                        <td>{{areas[1]}}</td>
+                    </tr>
+                    {%else%}
+                    <tr class = "textLargeListRed">
+                        <th>Page 1 : &nbsp;</th>
+                        <td>{{areas[1]}}</td>
+                    </tr>
+                    {%endif%}
+                    {%if areas[2]%}
+                    <tr class = "textLargeListGreen">
+                        <th>Page 2 : &nbsp;</th>
+                        <td>{{areas[2]}}</td>
+                    </tr>
+                    {%else%}
+                    <tr class = "textLargeListRed">
+                        <th>Page 2 : &nbsp;</th>
+                        <td>{{areas[2]}}</td>
+                    </tr>
+                    {%endif%}
+                    {%if areas[3]%}
+                    <tr class = "textLargeListGreen">
+                        <th>Page 3 : &nbsp;</th>
+                        <td>{{areas[3]}}</td>
+                    </tr>
+                    {%else%}
+                    <tr class = "textLargeListRed">
+                        <th>Page 3 : &nbsp;</th>
+                        <td>{{areas[3]}}</td>
+                    </tr>
+                    {%endif%}
+                    {%if areas[4]%}
+                    <tr class = "textLargeListGreen">
+                        <th>Page 4 : &nbsp;</th>
+                        <td>{{areas[4]}}</td>
+                    </tr>
+                    {%else%}
+                    <tr class = "textLargeListRed">
+                        <th>Page 4 : &nbsp;</th>
+                        <td>{{areas[4]}}</td>
+                    </tr>
+                    {%endif%}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <p class = "textLarge">Picture of Dam: </p>
+            <!--Used the documentation to figure out how to make images. Also used Gemini to figure out how to paste a image that is in a exisiting file. I also used Gemini to help my picture to fit onto the website. To ensure that I am doing the styling correctly, I read and confirmed with the documentation to ensure that Gemini was doing it right.-->
+            <img src="{{url_for('static', filename='dam.avif')}}" alt = "Picture of Dam" style = "width: 100%; height: 600px; object-fit: cover;">
+        </div>
+    </div>
+{% endblock %}
