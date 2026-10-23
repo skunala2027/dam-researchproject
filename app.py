@@ -66,3 +66,17 @@ def comments():
         statementsFromUser = db1.execute("SELECT * FROM comments")
         areasToExplore[4] = True
         return render_template("comments.html", statementsFromUser=statementsFromUser)
+
+@app.route("/data")
+def data():
+    data = db.execute("SELECT year, population, ninty_above, ninty_below FROM herring ORDER BY year ASC")
+    year = []
+    population = []
+    ninty_above = []
+    ninty_below = []
+    for row in data:
+        year.append(row["year"])
+        population.append(row["population"])
+        ninty_above.append(row["ninty_above"])
+        ninty_below.append(row["ninty_below"])
+    return render_template("data.html", year=year, population=population, ninty_above=ninty_above, ninty_below=ninty_below)
