@@ -14,6 +14,15 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQL("sqlite:///andover.db")
+# Automatically create the table if it doesn't exist
+db.execute("""
+    CREATE TABLE IF NOT EXISTS herring (
+        year INTEGER,
+        population INTEGER,
+        ninty_above INTEGER,
+        ninty_below INTEGER
+    )
+""")
 db1 = SQL("sqlite:///comments.db")
 
 @app.after_request
