@@ -14,36 +14,42 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 db = SQL("sqlite:///andover.db")
-# Automatically create the table if it doesn't exist
+# Drop the old table if it exists (fixes the missing column error) and create the new one
+db.execute("DROP TABLE IF EXISTS herring")
+
 db.execute("""
-    CREATE TABLE IF NOT EXISTS herring (
+    CREATE TABLE herring (
+        count_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        dam_id INTEGER,
         year INTEGER,
+        sd INTEGER,
         population INTEGER,
         ninty_above INTEGER,
-        ninty_below INTEGER
+        ninty_below INTEGER,
+        FOREIGN KEY (dam_id) REFERENCES dams(dam_id)
     )
 """)
-# Automatically seed your data if the table is empty
-row_count = db.execute("SELECT COUNT(*) as count FROM herring")[0]["count"]
-if row_count == 0:
-    herring_data = [
-        (2, 2017, 574, 1523, 2097, 949),
-        (2, 2018, 413, 1787, 2200, 1374),
-        (2, 2019, 232, 475, 707, 243),
-        (2, 2020, 652, 927, 1579, 275),
-        (2, 2021, 1454, 2734, 4188, 1280),
-        (2, 2022, 269, 776, 1045, 507),
-        (2, 2023, 708, 2585, 3293, 1877),
-        (2, 2024, 396, 1042, 1438, 646),
-        (2, 2025, 330, 429, 759, 99),
-        (2, 2026, 1135, 2471, 3606, 1336),
-        (2, 2016, 0, 0, 0, 0)
-    ]
-    for row in herring_data:
-        db.execute(
-            "INSERT INTO herring (dam_id, year, sd, population, ninty_above, ninty_below) VALUES (?, ?, ?, ?, ?, ?)",
-            row[0], row[1], row[2], row[3], row[4], row[5]
-        )
+
+# Seed your data
+herring_data = [
+    (2, 2017, 574, 1523, 2097, 949),
+    (2, 2018, 413, 1787, 2200, 1374),
+    (2, 2019, 232, 475, 707, 243),
+    (2, 2020, 652, 927, 1579, 275),
+    (2, 2021, 1454, 2734, 4188, 1280),
+    (2, 2022, 269, 776, 1045, 507),
+    (2, 2023, 708, 2585, 3293, 1877),
+    (2, 2024, 396, 1042, 1438, 646),
+    (2, 2025, 330, 429, 759, 99),
+    (2, 2026, 1135, 2471, 3606, 1336),
+    (2, 2016, 0, 0, 0, 0)
+]
+
+for row in herring_data:
+    db.execute(
+        "INSERT INTO herring (dam_id, year, sd, population, ninty_above, ninty_below) VALUES (?, ?, ?, ?, ?, ?)",
+        row[0], row[1], row[2], row[3], row[4], row[5]
+    )
 db1 = SQL("sqlite:///comments.db")
 
 @app.after_request
